@@ -1,7 +1,7 @@
 ﻿using System.Collections.ObjectModel;
-using Parsing.Model;
+using Conversion.Model;
 
-namespace Parsing.ViewModel
+namespace Conversion.ViewModel
 {
     /// <summary>
     /// The view model for the main window of the application.

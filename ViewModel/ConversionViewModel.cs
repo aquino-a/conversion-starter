@@ -2,27 +2,27 @@
 using System.IO;
 using System.Windows;
 using System.Windows.Input;
-using Parsing.Service;
+using Conversion;
 
-namespace Parsing.ViewModel
+namespace Conversion.ViewModel
 {
     /// <summary>
-    /// View model for parsing.
+    /// View model for converting.
     /// </summary>
-    public class ParserViewModel : ViewModelBase
+    public class ConversionViewModel : ViewModelBase
     {
-        private readonly IParseService _parseService;
+        private readonly IConverter _converter;
         private string _filePath;
         private string _textResult;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ParserViewModel"/> class.
-        /// Constructs a view model for receiving parse commands and getting a file path.
+        /// Initializes a new instance of the <see cref="ConversionViewModel"/> class.
+        /// Constructs a view model for receiving convert commands and getting a file path.
         /// </summary>
-        /// <param name="parseService">will be used to parse the file.</param>
-        public ParserViewModel(IParseService parseService)
+        /// <param name="converter">will be used to convert the file.</param>
+        public ConversionViewModel(IConverter converter)
         {
-            this._parseService = parseService;
+            this._converter = converter;
             this.SetupCommands();
         }
 
@@ -56,10 +56,10 @@ namespace Parsing.ViewModel
         }
 
         /// <summary>
-        /// Gets or sets the parse command.
-        /// Parses the current file.
+        /// Gets or sets the convert command.
+        /// Converts the current file.
         /// </summary>
-        public ICommand Parse { get; set; }
+        public ICommand Convert { get; set; }
 
         /// <summary>
         /// Gets or sets the copy command.
@@ -69,17 +69,17 @@ namespace Parsing.ViewModel
 
         private void SetupCommands()
         {
-            this.Parse = new RelayCommand(this.ParseFile, this.CanParse);
+            this.Convert = new RelayCommand(this.ConvertFile, this.CanCovert);
             this.Copy = new RelayCommand(o => Clipboard.SetText(this.TextResult), o => !string.IsNullOrWhiteSpace(this.TextResult));
         }
 
-        private void ParseFile(object obj)
+        private void ConvertFile(object obj)
         {
-            var parsed = this._parseService.Parse(this.FilePath);
-            this.TextResult = string.Join(Environment.NewLine, parsed);
+            var converted = this._converter.Convert(this.FilePath);
+            this.TextResult = string.Join(Environment.NewLine, converted);
         }
 
-        private bool CanParse(object obj)
+        private bool CanCovert(object obj)
         {
             var hasFileName = !string.IsNullOrWhiteSpace(this.FilePath);
             if (!hasFileName)

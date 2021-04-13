@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.Diagnostics;
 
-namespace Parsing.ViewModel
+namespace Conversion.ViewModel
 {
     /// <summary>
     /// Base class for all ViewModel classes in the application.

@@ -1,18 +1,18 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
-using Parsing.ViewModel;
+using Conversion.ViewModel;
 
-namespace Parsing.View
+namespace Conversion.View
 {
     /// <summary>
-    /// Interaction logic for Parser.xaml.
+    /// Interaction logic for ConverterView.xaml.
     /// </summary>
-    public partial class Parser : UserControl
+    public partial class ConverterView : UserControl
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="Parser"/> class.
+        /// Initializes a new instance of the <see cref="ConverterView"/> class.
         /// </summary>
-        public Parser()
+        public ConverterView()
         {
             this.InitializeComponent();
         }
@@ -38,7 +38,7 @@ namespace Parsing.View
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            (this.DataContext as ParserViewModel).FilePath = this.OpenFileDialog();
+            (this.DataContext as ConversionViewModel).FilePath = this.OpenFileDialog();
         }
     }
 }

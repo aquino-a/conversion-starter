@@ -1,11 +1,11 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:local="clr-namespace:Parsing.View"
-                    xmlns:vm="clr-namespace:Parsing.ViewModel"
+                    xmlns:local="clr-namespace:Conversion.View"
+                    xmlns:vm="clr-namespace:Conversion.ViewModel"
                     >
     
-    <DataTemplate DataType="{x:Type vm:ParserViewModel}">
-        <local:Parser />
+    <DataTemplate DataType="{x:Type vm:ConversionViewModel}">
+        <local:ConverterView />
     </DataTemplate>
     
     

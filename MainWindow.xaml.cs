@@ -1,7 +1,7 @@
 ﻿using System.Windows;
-using Parsing.ViewModel;
+using Conversion.ViewModel;
 
-namespace Parsing
+namespace Conversion
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml.

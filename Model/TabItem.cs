@@ -1,4 +1,4 @@
-﻿namespace Parsing.Model
+﻿namespace Conversion.Model
 {
     /// <summary>
     /// A Tab to be displayed in the application.
