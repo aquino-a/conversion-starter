@@ -14,6 +14,8 @@ namespace Conversion.ViewModel
         private readonly IConverter _converter;
         private string _filePath;
         private string _textResult;
+        private string _arguments;
+        private bool _showArguments;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ConversionViewModel"/> class.
@@ -36,7 +38,8 @@ namespace Conversion.ViewModel
         /// </summary>
         public string FilePath
         {
-            get => this._filePath; set
+            get => this._filePath;
+            set
             {
                 this._filePath = value;
                 this.OnPropertyChanged("FilePath");
@@ -48,10 +51,37 @@ namespace Conversion.ViewModel
         /// </summary>
         public string TextResult
         {
-            get => this._textResult; set
+            get => this._textResult;
+            set
             {
                 this._textResult = value;
                 this.OnPropertyChanged("TextResult");
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether the arguments are shown in the view.
+        /// </summary>
+        public bool ShowArguments
+        {
+            get => this._showArguments;
+            set
+            {
+                this._showArguments = value;
+                this.OnPropertyChanged("ShowArguments");
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the arguments shown in the view.
+        /// </summary>
+        public string Arguments
+        {
+            get => this._arguments;
+            set
+            {
+                this._arguments = value;
+                this.OnPropertyChanged("Arguments");
             }
         }
 
@@ -75,7 +105,9 @@ namespace Conversion.ViewModel
 
         private void ConvertFile(object obj)
         {
-            var converted = this._converter.Convert(this.FilePath);
+            var converted = string.IsNullOrWhiteSpace(this.Arguments)
+                ? this._converter.Convert(this.FilePath)
+                : this._converter.Convert(this.FilePath, this.Arguments);
             this.TextResult = string.Join(Environment.NewLine, converted);
         }
 
