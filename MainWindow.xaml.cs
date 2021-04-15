@@ -1,5 +1,5 @@
-﻿using System.Windows;
-using Conversion.ViewModel;
+﻿using Conversion.ViewModel;
+using System.Windows;
 
 namespace Conversion
 {

@@ -1,5 +1,5 @@
-﻿using System.Collections.ObjectModel;
-using Conversion.Model;
+﻿using Conversion.Model;
+using System.Collections.ObjectModel;
 
 namespace Conversion.ViewModel
 {

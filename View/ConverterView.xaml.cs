@@ -1,6 +1,6 @@
-﻿using System.Windows;
+﻿using Conversion.ViewModel;
+using System.Windows;
 using System.Windows.Controls;
-using Conversion.ViewModel;
 
 namespace Conversion.View
 {

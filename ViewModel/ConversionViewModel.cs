@@ -2,7 +2,6 @@
 using System.IO;
 using System.Windows;
 using System.Windows.Input;
-using Conversion;
 
 namespace Conversion.ViewModel
 {
