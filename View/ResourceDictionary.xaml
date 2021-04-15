@@ -3,10 +3,47 @@
                     xmlns:local="clr-namespace:Conversion.View"
                     xmlns:vm="clr-namespace:Conversion.ViewModel"
                     >
-    
     <DataTemplate DataType="{x:Type vm:ConversionViewModel}">
         <local:ConverterView />
     </DataTemplate>
     
-    
+    <Style x:Key="ButtonStyle" TargetType="Button">
+        <Setter Property="Width" Value="100" />
+        <Setter Property="HorizontalAlignment" Value="Right" />
+        <Setter Property="Margin"  Value="2"/>
+        <Setter Property="Background" Value="MintCream" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+    <Style x:Key="LabelStyle" TargetType="Label">
+        <Setter Property="HorizontalAlignment" Value="Right" />
+        <Setter Property="Margin"  Value="2"/>
+        <Setter Property="Foreground" Value="BlanchedAlmond"/>
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Label">
+                    <Border Background="Crimson" Padding="2" Width="100" CornerRadius="4">
+                        <ContentPresenter Focusable="False" HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="FileName" TargetType="TextBlock">
+        <Setter Property="Margin"  Value="2" />
+        <Setter Property="Foreground" Value="Ivory" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="MinWidth" Value="200" />
+    </Style>
+    <Style x:Key="Checkbox" TargetType="CheckBox">
+        <Setter Property="Margin"  Value="2" />
+        <Setter Property="Foreground" Value="Ivory" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+    <Style x:Key="TextBox" TargetType="TextBox">
+        <Setter Property="Foreground" Value="Ivory" />
+        <Setter Property="Background" Value="Black" />
+    </Style>
 </ResourceDictionary>
