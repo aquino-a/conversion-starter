@@ -1,5 +1,5 @@
 # conversion-starter
-A WPF starter for making text converters and putting them into one gui.
+A WPF class library with a simple GUI for interfacing with custom text converters.
 
 ## When to use
 
