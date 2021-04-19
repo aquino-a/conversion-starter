@@ -22,7 +22,7 @@ namespace Conversion.View
             var fileDialog = new Microsoft.Win32.OpenFileDialog
             {
                 DefaultExt = ".csv",
-                Filter = "CSV Files (*.csv)|*.csv|Text Files (*.txt)|*.txt",
+                Filter = "CSV Files (*.csv)|*.csv|Text Files (*.txt)|*.txt|All Files (*.*)|*.*",
             };
 
             var result = (bool)fileDialog.ShowDialog();
